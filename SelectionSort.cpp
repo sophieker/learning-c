@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-const int LENGTH = 6;
+const int LENGTH = 7;
 
 void printArray(int [], int size);
 
@@ -11,15 +11,15 @@ void swap(int arr[], int i, int j)
   arr[j] = temp_var;
 }
 
-int indexOfMinimum(int arr[], int start, int end)
+int indexOfMaximum(int arr[], int start, int end)
 {
-  int minimum = arr[start];
-  int index = start;
-  for (int i = start; i <= end; i++) 
+  int maximum = arr[end];
+  int index = end;
+  for (int i = end; i >= start; i--) 
   {
-    if (arr[i] < minimum)
+    if (arr[i] > maximum)
     {
-      minimum = arr[i];
+      maximum = arr[i];
       index = i;
     }
   }
@@ -28,12 +28,12 @@ int indexOfMinimum(int arr[], int start, int end)
 
 void selectionSort(int arr[], int length)
 {
-  int startIndex = 0;
-  while (startIndex < length - 1)
+  int endIndex = length-1;
+  while (endIndex > 0)
   {
-    int indexOfMin = indexOfMinimum(arr, startIndex, (length - 1));
-    swap(arr, indexOfMin, startIndex);
-    startIndex = startIndex + 1;
+    int indexOfMax = indexOfMaximum(arr, 0, endIndex);
+    swap(arr, indexOfMax, endIndex);
+    endIndex--;
     printArray(arr, LENGTH);
     cout << endl;
   }
@@ -49,7 +49,7 @@ void printArray(int arr[], int size)
 }
 
 int main() {
-  int array[LENGTH] = {24, 1, 3, 99, 103, 66};
+  int array[LENGTH] = {70, 40, 5, 1, -20, 90, 2};
   selectionSort(array, LENGTH);
   cout << endl;
   printArray(array, LENGTH);
