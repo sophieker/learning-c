@@ -2,12 +2,11 @@
 #include <cstring>
 using namespace std;
 
-const int SIZE = 10;
-const string SEARCH = "the";
+const int SIZE = 6
 
 // selection sort algorithm with strings
 
-void swap(string arr[], int i, int j)
+void swap(string arr[], string i, string j)
 {
   string temp_var = arr[i];
   arr[i] = arr[j];
@@ -40,53 +39,13 @@ void selectionSort(string arr[], int length)
   }
 }
 
-int BinaryStringSearch(string arr[], int size, string searchWord)
-{
-  int first = 0;
-  int last = size - 1;
-  int middle = (first + last)/2;
-
-  bool found;
-  while (found == false)
-  {
-    if (arr[middle] == searchWord)
-    {
-      return middle;
-      found = true;
-    }
-    else if (searchWord < arr[middle])
-    {
-      last = middle - 1;
-      middle = (first + last)/2;
-    }
-    else
-    {
-      first = middle + 1;
-      middle = (first + last)/2;
-    }
-  }
-  return -1;
-}
-
-void printArray(string arr[], int size)
-{
-  for (int i = 0; i < SIZE; i++)
-  {
-    cout << arr[i] << ", ";
-  }
-  cout << endl;
-}
-
-
 int main()
 {
-	string arr[SIZE] = {"this", "is", "the", "test", "for", "the", "binary", "string", "search", "program"};
+	string arr[SIZE] = {"hi", "what", "is", "popping", "sdl", "djf"};
 	selectionSort(arr, SIZE);
 
-  cout << "This is the sorted array: " << endl;
-  printArray(arr, SIZE);
-
-  cout << endl;
-
-  cout << "This is the index of " << SEARCH << ": " << BinaryStringSearch(arr, SIZE, SEARCH) << endl;
+	for (int i = 0; i < SIZE; i++)
+	{
+		cout << arr[i] << " ";
+	}
 }
