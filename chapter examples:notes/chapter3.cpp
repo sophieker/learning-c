@@ -1,2 +1,0 @@
-// CHAPTER 3 EXPRESSIONS AND INTERACTIVITY
-// 3.8 characters and strings
