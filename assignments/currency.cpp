@@ -1,4 +1,4 @@
-#include <iostream
+#include <iostream>
 #include <iomanip>
 using namespace std;
 
@@ -15,5 +15,5 @@ int main(){
    		cout << "Enter US Dollar amount: ";
    		cin >> input_to_yuan;
    		cout << input_to_yuan << " USD is " << input_to_yuan * 6.76 <<" Yuan";
-	}
+	} 
 }
